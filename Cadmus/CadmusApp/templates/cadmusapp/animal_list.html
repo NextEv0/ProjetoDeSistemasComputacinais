@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Minhas Entradas de Animais</h2>
+<a href="{% url 'animal_create' %}">Adicionar Nova Entrada</a>
+<ul>
+    {% for entry in entries %}
+        <li>{{ entry.nome }} - {{ entry.especie }} - {{ entry.idade }} anos
+            <a href="{% url 'animal_update' entry.pk %}">Editar</a>
+            <a href="{% url 'animal_delete' entry.pk %}">Deletar</a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

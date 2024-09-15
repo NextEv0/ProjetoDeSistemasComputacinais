@@ -37,7 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # Seu aplicativo
+    'CadmusApp',  # Adicione o seu aplicativo aqui
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -75,10 +78,15 @@ WSGI_APPLICATION = 'Cadmus.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'museu',  # Substitua pelo nome do seu banco de dados
+        'USER': 'postgres',
+        'PASSWORD': '123',
+        'HOST': 'localhost',  # ou o endereço do servidor
+        'PORT': '5432',  # Porta padrão do PostgreSQL
     }
 }
+
 
 
 # Password validation

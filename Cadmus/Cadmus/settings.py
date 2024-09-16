@@ -81,7 +81,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'museu',  # Substitua pelo nome do seu banco de dados
         'USER': 'postgres',
-        'PASSWORD': '123',
+        'PASSWORD': '1234',
         'HOST': 'localhost',  # ou o endereço do servidor
         'PORT': '5432',  # Porta padrão do PostgreSQL
     }

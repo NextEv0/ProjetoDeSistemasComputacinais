@@ -11,7 +11,7 @@
             }
               table {
                   border-collapse: collapse;
-                  width: 100%;
+                  width: 15%;
               }
               th, td {
                   border: 1px solid black;
@@ -24,26 +24,24 @@
           </style>
     </head>
     <body>
-        <table>
-            <thead>
-                <tr>
-                    <th>Col1</th>
-                    <th>Col2</th>
-                    <th>Col3</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Item11</td>
-                    <td>Item21</td>
-                    <td>Item31</td>
-                </tr>
-                <tr>
-                    <td>Item21</td>
-                    <td>Item22</td>
-                    <td>Item23</td>
-                </tr>
-            </tbody>
-        </table>
+        <h1>Tabela :3</h1>
+        <p>wow olha essa tabela :O</p>
+        <p>que tabela bacana!</p>
+
+        {{ continentes | safe }}
+        
+        {% load crispy_forms_tags %}
+
+        {% block content %} 
+        <h1 class="text-center mt-3 mb-3">Adicionar Continente</h1>
+        <div class="container">
+            <form method="post" class="jumbotron">
+                {% csrf_token %}
+                {{continenteform|crispy}}
+                <input type="submit" value="Add Cont" class="btn btn-success">
+            </form>
+        </div>
+        {% endblock %}
+
     </body>
 </html>

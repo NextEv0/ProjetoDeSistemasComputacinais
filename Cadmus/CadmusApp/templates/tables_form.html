@@ -1,0 +1,15 @@
+{% extends "index.html" %}
+{% load crispy_forms_tags%}
+
+
+{% block content %}
+<form action="" method="POST" autocomplete="off">
+    {%csrf_token%}
+    {{continent_form | crispy}} 
+    <button type="submit" class="btn btn-success btn-block btn-lg"><i class="fas fa-database"></i>
+        Registrar</button>
+    <a href="{% url 'Tabelas' %}" class="btn btn-secondary btn-block btn-lg">
+        <i class="fas fa-stream"></i> Voltar a navegação
+    </a>  
+</form>
+{% endblock content %}

@@ -30,6 +30,9 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
+
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -37,10 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # Seu aplicativo
-    'CadmusApp',  # Adicione o seu aplicativo aqui
+    'CadmusApp',
+    'crispy_forms',
+    'crispy_bootstrap5',
 ]
-
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

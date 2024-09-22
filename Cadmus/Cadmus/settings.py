@@ -30,7 +30,8 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-CRISPY_TEMPLATE_PACK = 'bootstrap5'
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 
 INSTALLED_APPS = [
@@ -84,7 +85,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'museu',  # Substitua pelo nome do seu banco de dados
         'USER': 'postgres',
-        'PASSWORD': '1234',
+        'PASSWORD': '123',
         'HOST': 'localhost',  # ou o endereço do servidor
         'PORT': '5432',  # Porta padrão do PostgreSQL
     }

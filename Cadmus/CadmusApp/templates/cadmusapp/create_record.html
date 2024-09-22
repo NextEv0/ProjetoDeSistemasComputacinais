@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Record - {{ table_name }}</title>
+</head>
+<body>
+    <h1>Create a new record for {{ table_name }}</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="columns">Columns:</label>
+        <input type="text" name="columns" placeholder="Column names separated by commas"><br>
+        <label for="values">Values:</label>
+        <input type="text" name="values" placeholder="Values separated by commas"><br>
+        <input type="submit" value="Create">
+    </form>
+</body>
+</html>

@@ -9,5 +9,9 @@ urlpatterns = [
     path('table/', view_continent, name="Tabelas"),
     path('login/', auth_views.LoginView.as_view(template_name='registration/login.html'), name='login'),
     path('base_generic/', base),
+    
+    # URLs para o CRUD geral
+    path('tables/', choose_table, name='choose_table'),
+    path('tables/<str:table_name>/', view_table_data, name='view_table_data'),
+    path('tables/<str:table_name>/create/', create_record, name='create_record'),
 ]
-

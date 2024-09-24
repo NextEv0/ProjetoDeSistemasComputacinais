@@ -8,6 +8,8 @@ urlpatterns = [
     path('delete/<int:id>/', delete_continent, name="continent_delete"),
     path('table/', view_continent, name="Tabelas"),
     path('login/', auth_views.LoginView.as_view(template_name='registration/login.html'), name='login'),
+    path('logout/', auth_views.LogoutView.as_view(), name='logout'),
+    path('register/', register, name='register'),
     path('base_generic/', base),
     
     # URLs para o CRUD geral

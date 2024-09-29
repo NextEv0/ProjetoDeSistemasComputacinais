@@ -6,7 +6,24 @@
 #   * Remove `managed = False` lines if you wish to allow Django to create, modify, and delete the table
 # Feel free to rename the models, but don't rename db_table values or field names.
 from django.db import models, migrations
+import uuid
+from django.db import models
 
+
+class NoteModel(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    title = models.CharField(max_length=255, unique=True)
+    content = models.TextField()
+    category = models.CharField(max_length=100, null=True, blank=True)
+    createdAt = models.DateTimeField(auto_now_add=True)
+    updatedAt = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        db_table = "notes"
+        ordering = ['-createdAt']
+
+        def __str__(self) -> str:
+            return self.title
 
 class AuthGroup(models.Model):
     name = models.CharField(unique=True, max_length=150)
@@ -259,6 +276,7 @@ class Phylum(models.Model):
 
 
 class Research(models.Model):
+    # id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     gbifid = models.BigIntegerField(primary_key=True)
     research_groupid = models.ForeignKey('ResearchGroup', models.DO_NOTHING, db_column='research_groupid', blank=True, null=True)
     license_rights = models.ForeignKey('Rights', models.DO_NOTHING, db_column='license_rights')
@@ -269,8 +287,8 @@ class Research(models.Model):
     preparations = models.CharField(max_length=15, blank=True, null=True)
     event_date = models.DateField(blank=True, null=True)
     event_remarks = models.TextField(blank=True, null=True)
-    publishing_country = models.ForeignKey(Country, models.DO_NOTHING, db_column='publishing_country')
-    localization = models.ForeignKey(Localization, models.DO_NOTHING)
+    publishing_country = models.ForeignKey('Country', models.DO_NOTHING, db_column='publishing_country')
+    localization = models.ForeignKey('Localization', models.DO_NOTHING)
 
     class Meta:
         managed = False

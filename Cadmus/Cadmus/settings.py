@@ -33,6 +33,10 @@ ALLOWED_HOSTS = []
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
 
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000"
+]
+CORS_ALLOW_CREDENTIALS = True
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -44,6 +48,8 @@ INSTALLED_APPS = [
     'CadmusApp',
     'crispy_forms',
     'crispy_bootstrap5',
+    'rest_framework',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -54,6 +60,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'Cadmus.urls'
@@ -83,7 +90,7 @@ WSGI_APPLICATION = 'Cadmus.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'museu',  # Substitua pelo nome do seu banco de dados
+        'NAME': 'Museu',  # Substitua pelo nome do seu banco de dados
         'USER': 'postgres',
         'PASSWORD': '123',
         'HOST': 'localhost',  # ou o endereço do servidor

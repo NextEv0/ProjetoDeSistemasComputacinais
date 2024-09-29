@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=D:\CESUPA\Projeto de sistemas\ProjetoDeSistemasComputacionais\Cadmus\venv
+set VIRTUAL_ENV=C:\Users\thifr\OneDrive\Área de Trabalho\Faculdade\Projeto de sistemas computacionais\Cadmus2.0\ProjetoDeSistemasComputacionais-1\cadmus\venv
 
 if not defined PROMPT set PROMPT=$P$G
 

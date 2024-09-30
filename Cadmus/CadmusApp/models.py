@@ -118,6 +118,9 @@ class Country(models.Model):
         managed = False
         db_table = 'country'
 
+    def __str__(self):
+        return self.country_name
+
 
 class DjangoAdminLog(models.Model):
     action_time = models.DateTimeField()
@@ -213,6 +216,9 @@ class Localization(models.Model):
         db_table = 'localization'
         unique_together = (('city', 'localization_name', 'decimal_latitude', 'decimal_longitude'),)
 
+    def __str__(self):
+        return self.localization_name
+
 
 class Log(models.Model):
     event_type = models.CharField(max_length=50)
@@ -259,7 +265,6 @@ class Phylum(models.Model):
 
 
 class Research(models.Model):
-    gbifid = models.BigIntegerField(primary_key=True)
     research_groupid = models.ForeignKey('ResearchGroup', models.DO_NOTHING, db_column='research_groupid', blank=True, null=True)
     license_rights = models.ForeignKey('Rights', models.DO_NOTHING, db_column='license_rights')
     collection_code = models.CharField(max_length=30)
@@ -285,6 +290,9 @@ class ResearchGroup(models.Model):
     class Meta:
         managed = False
         db_table = 'research_group'
+
+    def __str__(self):
+        return self.name
 
 
 class ResearchIssue(models.Model):
@@ -329,6 +337,9 @@ class Rights(models.Model):
     class Meta:
         managed = False
         db_table = 'rights'
+
+    def __str__(self):
+        return self.license
 
 
 class Species(models.Model):

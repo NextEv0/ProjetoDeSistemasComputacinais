@@ -7,7 +7,7 @@
       {% csrf_token %}
       {{ form.as_p }}
       <div class="form-group">
-        <button type="submit" class="btn btn-primary">Login</button>
+        <a href="templates/tables/" class="btn btn-primary">Login </a>
       </div>
     </form>
 
@@ -16,7 +16,99 @@
         <strong>Erro:</strong> Por favor, verifique as informações fornecidas.
       </div>
     {% endif %}
-    
-    <p>Não tem uma conta? <a href="{% url 'register' %}">Registre-se aqui</a>.</p>
   </div>
+
+  <style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    header {
+        background-color: #4CAF50;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        font-size: 24px;
+    }
+
+    .container {
+        padding: 20px;
+        text-align: center;
+    }
+
+    footer {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px;
+        text-align: center;
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+    }
+
+    form {
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    input[type="text"], input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    .button {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 16px;
+        margin: 10px 0;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        outline: none;
+        color: #fff;
+        background-color: #4CAF50;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 9px #999;
+    }
+
+    .button:hover {
+        background-color: #3e8e41;
+    }
+
+    .button:active {
+        background-color: #3e8e41;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .mt-3 {
+        margin-top: 20px;
+    }
+    
+    .mt-4 {
+        margin-top: 30px;
+    }
+
+    .mt-5 {
+        margin-top: 40px;
+    }
+  </style>
 {% endblock %}

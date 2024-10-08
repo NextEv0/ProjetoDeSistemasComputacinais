@@ -1,19 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% block title %}Minha Aplicação{% endblock %}</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    {% load static %}  <!-- Aqui carregamos a tag 'static' -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Cadmus{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    {% load crispy_forms_tags %}
 </head>
 <body>
-  <a href="tables/">
-    <button>Tabelas</button>
-</a> 
-  <div class="container">
-    {% block content %}
-    <!-- O conteúdo de cada página será inserido aqui -->
-    {% endblock %}
-  </div>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'CadmusApp:login' %}">Login</a></li>
+                <li><a href="{% url 'CadmusApp:register' %}">Register</a></li>
+                <li><a href="/">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    
+    <footer>
+        <p>© 2024 Cadmus</p>
+    </footer>
 </body>
 </html>

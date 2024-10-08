@@ -12,13 +12,71 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
         <title>Cadmus</title>
+
+        <style>
+            body {
+                margin: 0;
+                font-family: Arial, sans-serif;
+            }
+
+            header {
+                background-color: #4CAF50;
+                color: white;
+                padding: 20px;
+                text-align: center;
+                font-size: 24px;
+            }
+
+            .content {
+                padding: 20px;
+                text-align: center;
+            }
+
+            footer {
+                background-color: #4CAF50;
+                color: white;
+                padding: 10px;
+                text-align: center;
+                position: fixed;
+                width: 100%;
+                bottom: 0;
+            }
+
+            .button {
+                display: inline-block;
+                padding: 10px 20px;
+                font-size: 16px;
+                margin: 10px;
+                cursor: pointer;
+                text-align: center;
+                text-decoration: none;
+                outline: none;
+                color: #fff;
+                background-color: #4CAF50;
+                border: none;
+                border-radius: 15px;
+                box-shadow: 0 9px #999;
+            }
+
+            .button:hover {background-color: #3e8e41}
+
+            .button:active {
+                background-color: #3e8e41;
+                box-shadow: 0 5px #666;
+                transform: translateY(4px);
+            }
+        </style>
     </head>
     <body>
-
+        <header>
+            HEADER
+        </header>
+        
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
         crossorigin="anonymous"></script>
 
+<<<<<<< HEAD
         <h1>Cadmus v0.1</h1>
         
         <div class="container">
@@ -26,12 +84,37 @@
                 <div class="jumbotron">
                     <h1 class="display-4">Continentes</h1>
                     <p class="lead font-italic">Tabela referente aos Continentes.</p>
+=======
+        <div class="container">
+            <div class="col-md-10 offset-md-1 mt-5">
+                <div class="jumbotron">
+                    <h1 class="display-4">Bem-Vindo a plataforma Cadmus</h1>
+                    <p class="lead font-italic">holy moly :3  <a href="{% url 'CadmusApp:Cadmus Menu' %}" class="button" style="float: right;">Menu</a></p>
+>>>>>>> CRUD
                     <hr class="my-4">
+
+                    <!-- Botão 1 -->
+                    <a href="{% url 'CadmusApp:ResearchTable' %}" class="button">Ver pesquisas</a>
+
+                    <!-- Botão 2 -->
+                    <a href="{% url 'CadmusApp:ResearchGroupTable' %}" class="button">Ver grupos de pesquisas</a>
+
+                    <hr class="my-4">
+                    
                     {% block content %}
 
                     {% endblock content %}
+
+                    <br />
+                    <br />
+                    <br />
+                    <br />
                 </div>
             </div>
         </div>
+
+        <footer>
+            FOOTER
+        </footer>
     </body>
 </html>
